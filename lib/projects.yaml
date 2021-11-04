@@ -1,0 +1,12 @@
+projects:
+  - name: Weatherly
+    code_url: https://github.com/Salaheddin12/Weatherly
+    image: weatherly.png
+
+  - name: michlifen-resort
+    code_url: https://github.com/Salaheddin12/michlifen-resort
+    image: michlifen_resort.png
+
+  - name: Covid-19-Statistics
+    code_url: https://github.com/Salaheddin12/michlifen-resort
+    image: covid-19-statistics.png
