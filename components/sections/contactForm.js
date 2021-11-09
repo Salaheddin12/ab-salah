@@ -8,6 +8,17 @@ import {
 } from '@chakra-ui/react'
 import { Field, Formik, Form } from 'formik'
 import styled from '@emotion/styled'
+import * as Yup from 'yup'
+
+const schema = Yup.object({
+  Name: Yup.string()
+    .max(15, 'Must be 15 characters or less')
+    .required('Required'),
+  message: Yup.string()
+    .min(40, 'Must be 40 characters or less')
+    .required('Required'),
+  email: Yup.string().email('Invalid email address').required('Required')
+})
 
 const FormInput = styled.input`
   color: gray;
@@ -27,7 +38,6 @@ const FormTextArea = styled.textarea`
   color: gray;
   width: 100%;
   padding: 8px 12px;
-  margin-bottom: 56px;
   border: 1px solid #e8ecf4;
   border-radius: 8px;
   background: transparent;
@@ -38,7 +48,7 @@ const FormTextArea = styled.textarea`
 `
 
 const FormBox = styled.div`
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
   margin: 0 auto;
   margin-top: 4rem;
   padding: 2rem 3rem;
@@ -59,6 +69,7 @@ const ContactForm = () => {
       <FormBox>
         <Formik
           initialValues={{ name: '', email: '', message: '' }}
+          validationSchema={schema}
           onSubmit={(values, actions) => {
             setTimeout(() => {
               alert(JSON.stringify(values, null, 2))
@@ -72,6 +83,7 @@ const ContactForm = () => {
                 {({ field, form }) => (
                   <FormControl
                     isInvalid={form.errors.name && form.touched.name}
+                    mb={4}
                   >
                     <FormLabel htmlFor="name">Name</FormLabel>
                     <FormInput
@@ -88,6 +100,7 @@ const ContactForm = () => {
                 {({ field, form }) => (
                   <FormControl
                     isInvalid={form.errors.email && form.touched.email}
+                    mb={4}
                   >
                     <FormLabel htmlFor="email">Email</FormLabel>
                     <FormInput {...field} id="email" placeholder="email" />
@@ -99,6 +112,7 @@ const ContactForm = () => {
                 {({ field, form }) => (
                   <FormControl
                     isInvalid={form.errors.message && form.touched.message}
+                    mb={4}
                   >
                     <FormLabel htmlFor="message" color="#333">
                       Message
