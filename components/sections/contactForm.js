@@ -12,7 +12,8 @@ import * as Yup from 'yup'
 
 const schema = Yup.object({
   name: Yup.string()
-    .max(15, 'Must be 15 characters or less')
+    .max(40, 'Must be 40 characters or less')
+    .min(3, 'Must have at least 3 characters')
     .required('Required'),
   message: Yup.string()
     .min(40, 'Must be 40 characters or less')
@@ -24,7 +25,6 @@ const FormInput = styled.input`
   color: gray;
   width: 100%;
   padding: 8px 12px;
-  margin-bottom: 56px;
   border: 1px solid #e8ecf4;
   border-radius: 8px;
   background: transparent;
@@ -83,7 +83,7 @@ const ContactForm = () => {
                 {({ field, form }) => (
                   <FormControl
                     isInvalid={form.errors.name && form.touched.name}
-                    mb={4}
+                    mb={8}
                   >
                     <FormLabel htmlFor="name">Name</FormLabel>
                     <FormInput
@@ -100,7 +100,7 @@ const ContactForm = () => {
                 {({ field, form }) => (
                   <FormControl
                     isInvalid={form.errors.email && form.touched.email}
-                    mb={4}
+                    mb={8}
                   >
                     <FormLabel htmlFor="email">Email</FormLabel>
                     <FormInput {...field} id="email" placeholder="email" />
@@ -112,7 +112,7 @@ const ContactForm = () => {
                 {({ field, form }) => (
                   <FormControl
                     isInvalid={form.errors.message && form.touched.message}
-                    mb={4}
+                    mb={8}
                   >
                     <FormLabel htmlFor="message" color="#333">
                       Message
