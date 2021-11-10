@@ -57,7 +57,7 @@ const FormBox = styled.div`
 
 const ContactForm = () => {
   return (
-    <Box mt={40}>
+    <Box my={40} bg="#F9FAFF">
       <Heading
         as="h2"
         variant="section-subtitle"
