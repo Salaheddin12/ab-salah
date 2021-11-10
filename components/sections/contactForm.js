@@ -11,7 +11,7 @@ import styled from '@emotion/styled'
 import * as Yup from 'yup'
 
 const schema = Yup.object({
-  Name: Yup.string()
+  name: Yup.string()
     .max(15, 'Must be 15 characters or less')
     .required('Required'),
   message: Yup.string()
