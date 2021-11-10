@@ -131,6 +131,8 @@ const ContactForm = () => {
                 isLoading={props.isSubmitting}
                 type="submit"
                 variant="base"
+                mb="0 auto"
+                display="block"
               >
                 Submit
               </Button>
