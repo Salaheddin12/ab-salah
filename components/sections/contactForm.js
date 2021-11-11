@@ -1,3 +1,4 @@
+import Socials from '../socials'
 import {
   Box,
   FormControl,
@@ -131,11 +132,12 @@ const ContactForm = () => {
                 isLoading={props.isSubmitting}
                 type="submit"
                 variant="base"
-                mb="0 auto"
+                m="0 auto"
                 display="block"
               >
                 Submit
               </Button>
+              <Socials />
             </Form>
           )}
         </Formik>
