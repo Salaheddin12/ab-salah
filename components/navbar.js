@@ -25,6 +25,9 @@ const LinkItem = ({ href, path, _target, children, ...props }) => {
           textDecoration: 'none',
           color: '#E05D5D'
         }}
+        _focus={{
+          boxShadow: 'none'
+        }}
         {...props}
       >
         {children}
