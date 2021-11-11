@@ -7,7 +7,7 @@ const index = ({ order = 0, data }) => {
   return (
     <Box
       display="flex"
-      flexDirection={{ base: 'column', lg: 'row' }}
+      flexDirection={{ base: 'column', md: 'row' }}
       maxWidth={992}
       borderRadius="24px"
       mx={{ base: 0, md: 100 }}
@@ -43,7 +43,7 @@ const index = ({ order = 0, data }) => {
       </Box>
       <Image
         src={`/images/${image}`}
-        maxWidth={{ lg: '50%' }}
+        maxWidth={{ md: '50%' }}
         alt="Profile image"
         borderRadius="0 24px 24px 0"
       />
