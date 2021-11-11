@@ -49,10 +49,10 @@ const FormTextArea = styled.textarea`
 `
 
 const FormBox = styled.div`
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
   margin: 0 auto;
   margin-top: 4rem;
   padding: 2rem 3rem;
+  box-shadow: 0px 0px 20px 5px rgba(91, 91, 91, 0.17);
   max-width: 24rem;
 `
 
