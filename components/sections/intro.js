@@ -13,14 +13,7 @@ const Paragraph = styled.p`
   color: #828282;
   padding-bottom: 2rem;
 `
-// const ButtonTeal = styled.button`
-//   background-color: #00a19d;
-//   color: #f9faff;
-//   border-radius: 8px;
-//   padding: 8px 24px;
-//   border: 2px solid #00a19d;
-//   margin-right: 0.75rem;
-// `
+
 const index = () => {
   return (
     <Section

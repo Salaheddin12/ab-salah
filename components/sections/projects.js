@@ -1,6 +1,5 @@
 import React from 'react'
 import { Box, Heading } from '@chakra-ui/react'
-// import styled from '@emotion/styled'
 import Project from '../projectCard'
 import Section from '../section'
 import { projects } from '../../lib/projects.yaml'

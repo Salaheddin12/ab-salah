@@ -2,15 +2,6 @@ import React from 'react'
 import { Heading, Box, Image } from '@chakra-ui/react'
 import LinkItem from './link'
 
-// const linkProps = {
-//   border: '2px solid',
-//   color: '#FFB344',
-//   borderColor: '#FFB344',
-//   bg: 'transparent',
-//   borderRadius: 24,
-//   fontFamily: 'NUNITO'
-// }
-
 const index = ({ order = 0, data }) => {
   const { name, image, code_url } = data
   return (
