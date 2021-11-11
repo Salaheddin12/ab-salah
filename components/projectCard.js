@@ -1,19 +1,18 @@
 import React from 'react'
-import { Heading, Box, Image, Button } from '@chakra-ui/react'
-// import styled from '@emotion/styled'
+import { Heading, Box, Image } from '@chakra-ui/react'
+import LinkItem from './link'
 
-// const Paragraph = styled.p`
-//   color: #333;
-//   font-size: 0.75rem;
-//   font-family: 'NUNITO';
-//   font-size: 1.5rem;
-//   line-height: 2.25rem;
-//   color: #828282;
-//   padding-bottom: 2rem;
-// `
+// const linkProps = {
+//   border: '2px solid',
+//   color: '#FFB344',
+//   borderColor: '#FFB344',
+//   bg: 'transparent',
+//   borderRadius: 24,
+//   fontFamily: 'NUNITO'
+// }
 
 const index = ({ order = 0, data }) => {
-  const { name, image } = data
+  const { name, image, code_url } = data
   return (
     <Box
       display="flex"
@@ -42,7 +41,14 @@ const index = ({ order = 0, data }) => {
           I created this personal project in order to show how to create an
           interface in Figma using a portfolio as an example.
         </Paragraph> */}
-        <Button variant="yellow-outlined">View Project</Button>
+        <LinkItem
+          href={code_url}
+          _target="_blank"
+          variant="yellow-outlined"
+          passHref
+        >
+          View Project
+        </LinkItem>
       </Box>
       <Image
         src={`/images/${image}`}
