@@ -28,9 +28,9 @@ const index = () => {
           About me
         </Heading>
         <Paragraph variant="section-p">
-          Nisl arcu, scelerisque neque ut. Tincidunt amet, tempor duis tortor
-          neque auctor dis ipsum. Pretium cras amet odio amet eleifend id sed
-          cras sed. Aliquet risus posuere aliquet imperdiet sit.
+          I am a front end developer based in Rabat, Morocco. I studied
+          programming for two years then specialized in web development, I use
+          React, NextJs and familiar with vuejs.
         </Paragraph>
         <Button variant="base">Resume</Button>
       </Box>
