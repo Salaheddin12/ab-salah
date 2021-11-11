@@ -20,6 +20,8 @@ const index = () => {
       justifyContent="space-between"
       alignItems="center"
       mt="1.5rem"
+      flexDirection={{ base: 'column-reverse', md: 'row' }}
+      p={{ base: '1rem', md: '2rem', lg: 0 }}
     >
       <Box flexGrow={1} mt={4} maxWidth="25rem" mr="2.5rem">
         <Heading as="h2" variant="section-title" pb="2rem" margin={0}>

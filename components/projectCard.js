@@ -17,9 +17,10 @@ const index = ({ order = 0, data }) => {
   return (
     <Box
       display="flex"
+      flexDirection={{ base: 'column', lg: 'row' }}
       maxWidth={992}
       borderRadius="24px"
-      mx={100}
+      mx={{ base: 0, md: 100 }}
       bg="#FFFFFF"
       justifyContent="space-between"
       mt="80px"
@@ -28,6 +29,7 @@ const index = ({ order = 0, data }) => {
       <Box
         display="flex"
         flexGrow={1}
+        padding={{ base: '2rem 1.5rem', lg: 0 }}
         flexDirection="column"
         justifyContent="center"
         alignItems="center"
@@ -44,7 +46,7 @@ const index = ({ order = 0, data }) => {
       </Box>
       <Image
         src={`/images/${image}`}
-        maxWidth="50%"
+        maxWidth={{ lg: '50%' }}
         alt="Profile image"
         borderRadius="0 24px 24px 0"
       />

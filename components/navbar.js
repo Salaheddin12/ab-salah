@@ -50,7 +50,8 @@ const Navbar = props => {
     >
       <Container
         display="flex"
-        p={2}
+        py={2}
+        px={{ base: '1rem', md: '2.5rem', lg: 0 }}
         maxW="container.lg"
         wrap="wrap"
         align="center"

@@ -22,7 +22,12 @@ const Paragraph = styled.p`
 // `
 const index = () => {
   return (
-    <Section delay={0.1}>
+    <Section
+      delay={0.1}
+      flexDirection={{ base: 'column-reverse', md: 'row' }}
+      alignItems="center"
+      p={{ base: '1rem', md: '2rem', lg: 0 }}
+    >
       <Box flexGrow={1} mt={4} maxWidth="25rem">
         <Heading as="h4" variant="section-subtitle">
           frontend web developer
@@ -41,9 +46,16 @@ const index = () => {
       <Image
         src="/images/me.png"
         position="absolute"
+        visibility={{ base: 'hidden', lg: 'visible' }}
         zIndex={-1}
         top={0}
         right={0}
+        maxWidth="50%"
+        alt="Profile image"
+      />
+      <Image
+        src="/images/me-mobile.png"
+        visibility={{ base: 'visible', lg: 'hidden' }}
         maxWidth="50%"
         alt="Profile image"
       />

@@ -18,7 +18,7 @@ const Section = ({
     initial={{ y: 10, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
     transition={{ duration: 0.8, delay }}
-    mb="9rem"
+    mb={{ base: '4.5rem', lg: '9rem' }}
     display={'flex'}
     flexDirection={flexDirection}
   >
