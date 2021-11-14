@@ -7,9 +7,14 @@ import {
   Button,
   Heading
 } from '@chakra-ui/react'
+import * as emailjs from 'emailjs-com'
 import { Field, Formik, Form } from 'formik'
 import styled from '@emotion/styled'
 import * as Yup from 'yup'
+
+const SERVICE_ID = 'service_9s6ixe8'
+const TEMPLATE_ID = 'template_iu24weg'
+const USER_ID = 'user_nqEALJFymPhzlFvwKQjBV'
 
 const schema = Yup.object({
   name: Yup.string()
@@ -21,6 +26,24 @@ const schema = Yup.object({
     .required('Required'),
   email: Yup.string().email('Invalid email address').required('Required')
 })
+
+const sendMail = async data => {
+  const { name, message, email } = data
+  const templateParams = {
+    name,
+    message,
+    email,
+    subject: 'test'
+  }
+  await emailjs
+    .send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
+    .then(response => {
+      console.log(response.status, response.text)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+}
 
 const FormInput = styled.input`
   color: gray;
@@ -73,7 +96,7 @@ const ContactForm = () => {
           validationSchema={schema}
           onSubmit={(values, actions) => {
             setTimeout(() => {
-              alert(JSON.stringify(values, null, 2))
+              sendMail(values)
               actions.setSubmitting(false)
             }, 1000)
           }}
