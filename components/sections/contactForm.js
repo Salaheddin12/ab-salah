@@ -24,16 +24,19 @@ const schema = Yup.object({
   message: Yup.string()
     .min(40, 'Must be 40 characters or less')
     .required('Required'),
+  subject: Yup.string()
+    .min(3, 'Must have at least 3 characters')
+    .max(40, 'Must be 40 characters or less'),
   email: Yup.string().email('Invalid email address').required('Required')
 })
 
 const sendMail = async data => {
-  const { name, message, email } = data
+  const { name, message, email, subject } = data
   const templateParams = {
     name,
     message,
     email,
-    subject: 'test'
+    subject
   }
   await emailjs
     .send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
@@ -129,6 +132,18 @@ const ContactForm = () => {
                     <FormLabel htmlFor="email">Email</FormLabel>
                     <FormInput {...field} id="email" placeholder="email" />
                     <FormErrorMessage>{form.errors.email}</FormErrorMessage>
+                  </FormControl>
+                )}
+              </Field>
+              <Field name="subject">
+                {({ field, form }) => (
+                  <FormControl
+                    isInvalid={form.errors.subject && form.touched.subject}
+                    mb={8}
+                  >
+                    <FormLabel htmlFor="subject">Subject</FormLabel>
+                    <FormInput {...field} id="subject" placeholder="subject" />
+                    <FormErrorMessage>{form.errors.subject}</FormErrorMessage>
                   </FormControl>
                 )}
               </Field>
