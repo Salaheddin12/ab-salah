@@ -16,7 +16,7 @@ import { HamburgerIcon } from '@chakra-ui/icons'
 const LinkItem = ({ href, path, _target, children, ...props }) => {
   const active = path === href
   return (
-    <NextLink href={href} passHref>
+    <NextLink href={href}>
       <Link
         p={2}
         color={active ? '#E05D5D' : '#202023'}
@@ -57,7 +57,7 @@ const Navbar = props => {
         justify="space-between"
       >
         <Flex align="center" mr={5}>
-          <LinkItem href="/" passHref pl={0}>
+          <LinkItem href="/" pl={0}>
             Ab.Salah
           </LinkItem>
         </Flex>
@@ -98,13 +98,13 @@ const Navbar = props => {
                 transition="none"
               />
               <MenuList bg="#F9FAFF" color="#333">
-                <NextLink href="/about" passHref>
+                <NextLink href="/about">
                   <MenuItem as={Link}>About</MenuItem>
                 </NextLink>
-                <NextLink href="#projects" passHref>
+                <NextLink href="#projects">
                   <MenuItem as={Link}>Projects</MenuItem>
                 </NextLink>
-                <NextLink href="#contact" passHref>
+                <NextLink href="#contact">
                   <MenuItem as={Link}>Contact</MenuItem>
                 </NextLink>
               </MenuList>

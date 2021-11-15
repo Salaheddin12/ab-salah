@@ -28,16 +28,7 @@ const index = ({ order = 0, data }) => {
         <Heading as="h3" variant="section-subtitle">
           {name}
         </Heading>
-        {/* <Paragraph variant="section-p">
-          I created this personal project in order to show how to create an
-          interface in Figma using a portfolio as an example.
-        </Paragraph> */}
-        <LinkItem
-          href={code_url}
-          _target="_blank"
-          variant="yellow-outlined"
-          passHref
-        >
+        <LinkItem href={code_url} _target="_blank" variant="yellow-outlined">
           View Project
         </LinkItem>
       </Box>
