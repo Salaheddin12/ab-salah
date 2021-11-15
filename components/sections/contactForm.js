@@ -82,12 +82,13 @@ const FormBox = styled.div`
   padding: 2rem 3rem;
   box-shadow: 0px 0px 20px 5px rgba(91, 91, 91, 0.17);
   max-width: 24rem;
+  background-color: #f9faff;
 `
 
 const ContactForm = () => {
   return (
     <Section delay={0.1} display="inherit">
-      <Box my={40} bg="#F9FAFF">
+      <Box my={40}>
         <Heading
           as="h2"
           variant="section-subtitle"
