@@ -12,10 +12,6 @@ import { Field, Formik, Form } from 'formik'
 import styled from '@emotion/styled'
 import * as Yup from 'yup'
 
-const SERVICE_ID = 'service_9s6ixe8'
-const TEMPLATE_ID = 'template_iu24weg'
-const USER_ID = 'user_nqEALJFymPhzlFvwKQjBV'
-
 const schema = Yup.object({
   name: Yup.string()
     .max(40, 'Must be 40 characters or less')
@@ -39,7 +35,12 @@ const sendMail = async data => {
     subject
   }
   await emailjs
-    .send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
+    .send(
+      process.env.SERVICE_ID,
+      process.env.TEMPLATE_ID,
+      templateParams,
+      process.env.USER_ID
+    )
     .then(response => {
       console.log(response.status, response.text)
     })
