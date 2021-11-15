@@ -93,8 +93,11 @@ const Navbar = props => {
                 icon={<HamburgerIcon />}
                 variant="outline"
                 aria-label="Options"
+                _hover="none"
+                _active="none"
+                transition="none"
               />
-              <MenuList>
+              <MenuList bg="#F9FAFF" color="#333">
                 <NextLink href="/about" passHref>
                   <MenuItem as={Link}>About</MenuItem>
                 </NextLink>
