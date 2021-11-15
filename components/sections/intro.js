@@ -20,7 +20,6 @@ const index = () => {
       delay={0.1}
       flexDirection={{ base: 'column-reverse', md: 'row' }}
       alignItems="center"
-      p={{ base: '1rem', md: '2rem', lg: 0 }}
     >
       <Box flexGrow={1} mt={4} maxWidth="25rem">
         <Heading as="h4" variant="section-subtitle">

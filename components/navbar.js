@@ -51,14 +51,13 @@ const Navbar = props => {
       <Container
         display="flex"
         py={2}
-        px={{ base: '1rem', md: '2.5rem', lg: 0 }}
         maxW="container.lg"
         wrap="wrap"
         align="center"
         justify="space-between"
       >
         <Flex align="center" mr={5}>
-          <LinkItem href="/" passHref>
+          <LinkItem href="/" passHref pl={0}>
             Ab.Salah
           </LinkItem>
         </Flex>
