@@ -1,3 +1,4 @@
+import Section from '../section'
 import Socials from '../socials'
 import {
   Box,
@@ -85,103 +86,109 @@ const FormBox = styled.div`
 
 const ContactForm = () => {
   return (
-    <Box my={40} bg="#F9FAFF">
-      <Heading
-        as="h2"
-        variant="section-subtitle"
-        textAlign="center"
-        fontSize="3rem"
-      >
-        Contact
-      </Heading>
-      <FormBox>
-        <Formik
-          initialValues={{ name: '', email: '', message: '' }}
-          validationSchema={schema}
-          onSubmit={(values, actions) => {
-            setTimeout(() => {
-              sendMail(values)
-              actions.setSubmitting(false)
-            }, 1000)
-          }}
+    <Section delay={0.1} display="inherit">
+      <Box my={40} bg="#F9FAFF">
+        <Heading
+          as="h2"
+          variant="section-subtitle"
+          textAlign="center"
+          fontSize="3rem"
         >
-          {props => (
-            <Form>
-              <Field name="name">
-                {({ field, form }) => (
-                  <FormControl
-                    isInvalid={form.errors.name && form.touched.name}
-                    mb={8}
-                  >
-                    <FormLabel htmlFor="name">Name</FormLabel>
-                    <FormInput
-                      {...field}
-                      id="name"
-                      color="grey"
-                      placeholder="name"
-                    />
-                    <FormErrorMessage>{form.errors.name}</FormErrorMessage>
-                  </FormControl>
-                )}
-              </Field>
-              <Field name="email">
-                {({ field, form }) => (
-                  <FormControl
-                    isInvalid={form.errors.email && form.touched.email}
-                    mb={8}
-                  >
-                    <FormLabel htmlFor="email">Email</FormLabel>
-                    <FormInput {...field} id="email" placeholder="email" />
-                    <FormErrorMessage>{form.errors.email}</FormErrorMessage>
-                  </FormControl>
-                )}
-              </Field>
-              <Field name="subject">
-                {({ field, form }) => (
-                  <FormControl
-                    isInvalid={form.errors.subject && form.touched.subject}
-                    mb={8}
-                  >
-                    <FormLabel htmlFor="subject">Subject</FormLabel>
-                    <FormInput {...field} id="subject" placeholder="subject" />
-                    <FormErrorMessage>{form.errors.subject}</FormErrorMessage>
-                  </FormControl>
-                )}
-              </Field>
-              <Field name="message">
-                {({ field, form }) => (
-                  <FormControl
-                    isInvalid={form.errors.message && form.touched.message}
-                    mb={8}
-                  >
-                    <FormLabel htmlFor="message" color="#333">
-                      Message
-                    </FormLabel>
-                    <FormTextArea
-                      {...field}
-                      id="message"
-                      placeholder="message"
-                    />
-                    <FormErrorMessage>{form.errors.message}</FormErrorMessage>
-                  </FormControl>
-                )}
-              </Field>
-              <Button
-                mt={4}
-                isLoading={props.isSubmitting}
-                type="submit"
-                variant="base"
-                m="0 auto"
-                display="block"
-              >
-                Submit
-              </Button>
-              <Socials />
-            </Form>
-          )}
-        </Formik>
-      </FormBox>
-    </Box>
+          Contact
+        </Heading>
+        <FormBox>
+          <Formik
+            initialValues={{ name: '', email: '', message: '' }}
+            validationSchema={schema}
+            onSubmit={(values, actions) => {
+              setTimeout(() => {
+                sendMail(values)
+                actions.setSubmitting(false)
+              }, 1000)
+            }}
+          >
+            {props => (
+              <Form>
+                <Field name="name">
+                  {({ field, form }) => (
+                    <FormControl
+                      isInvalid={form.errors.name && form.touched.name}
+                      mb={8}
+                    >
+                      <FormLabel htmlFor="name">Name</FormLabel>
+                      <FormInput
+                        {...field}
+                        id="name"
+                        color="grey"
+                        placeholder="name"
+                      />
+                      <FormErrorMessage>{form.errors.name}</FormErrorMessage>
+                    </FormControl>
+                  )}
+                </Field>
+                <Field name="email">
+                  {({ field, form }) => (
+                    <FormControl
+                      isInvalid={form.errors.email && form.touched.email}
+                      mb={8}
+                    >
+                      <FormLabel htmlFor="email">Email</FormLabel>
+                      <FormInput {...field} id="email" placeholder="email" />
+                      <FormErrorMessage>{form.errors.email}</FormErrorMessage>
+                    </FormControl>
+                  )}
+                </Field>
+                <Field name="subject">
+                  {({ field, form }) => (
+                    <FormControl
+                      isInvalid={form.errors.subject && form.touched.subject}
+                      mb={8}
+                    >
+                      <FormLabel htmlFor="subject">Subject</FormLabel>
+                      <FormInput
+                        {...field}
+                        id="subject"
+                        placeholder="subject"
+                      />
+                      <FormErrorMessage>{form.errors.subject}</FormErrorMessage>
+                    </FormControl>
+                  )}
+                </Field>
+                <Field name="message">
+                  {({ field, form }) => (
+                    <FormControl
+                      isInvalid={form.errors.message && form.touched.message}
+                      mb={8}
+                    >
+                      <FormLabel htmlFor="message" color="#333">
+                        Message
+                      </FormLabel>
+                      <FormTextArea
+                        {...field}
+                        id="message"
+                        placeholder="message"
+                      />
+                      <FormErrorMessage>{form.errors.message}</FormErrorMessage>
+                    </FormControl>
+                  )}
+                </Field>
+                <Button
+                  mt={4}
+                  isLoading={props.isSubmitting}
+                  type="submit"
+                  variant="base"
+                  m="0 auto"
+                  display="block"
+                >
+                  Submit
+                </Button>
+                <Socials />
+              </Form>
+            )}
+          </Formik>
+        </FormBox>
+      </Box>
+    </Section>
   )
 }
 

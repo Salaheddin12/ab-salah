@@ -10,6 +10,7 @@ const StyledDiv = chakra(motion.div, {
 const Section = ({
   children,
   delay = 0,
+  display = 'flex',
   flexDirection = 'row',
   ...otherProps
 }) => (
@@ -19,7 +20,7 @@ const Section = ({
     animate={{ y: 0, opacity: 1 }}
     transition={{ duration: 0.8, delay }}
     mb={{ base: '4.5rem', lg: '9rem' }}
-    display={'flex'}
+    display={display}
     flexDirection={flexDirection}
   >
     {children}

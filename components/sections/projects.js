@@ -6,7 +6,7 @@ import { projects } from '../../lib/projects.yaml'
 
 const Index = () => {
   return (
-    <Section delay={0.1} flexDirection="column">
+    <Section delay={0.1} flexDirection="column" id="projects">
       <Heading
         as="h2"
         variant="section-subtitle"
