@@ -56,6 +56,16 @@ const index = () => {
         maxWidth="50%"
         alt="Profile image"
       />
+      <Image
+        src="/images/red-shape.png"
+        right={0}
+        visibility={{ base: 'visible', lg: 'hidden' }}
+        position="absolute"
+        zIndex={-1}
+        top="21%"
+        width={147}
+        alt="Profile image"
+      />
     </Section>
   )
 }
