@@ -1,6 +1,11 @@
 import React from 'react'
-import { Heading, Box, Image } from '@chakra-ui/react'
+import { Heading, Box } from '@chakra-ui/react'
+import styled from '@emotion/styled'
 import LinkItem from './link'
+import Image from 'next/image'
+const StyledImage = styled(Image)`
+  border-radius: 0 24px 24px 0;
+`
 
 const index = ({ order = 0, data }) => {
   const { name, image, code_url } = data
@@ -32,11 +37,12 @@ const index = ({ order = 0, data }) => {
           View Project
         </LinkItem>
       </Box>
-      <Image
+      <StyledImage
         src={`/images/${image}`}
-        maxWidth={{ md: '50%' }}
+        width={396}
+        height={227}
         alt="Profile image"
-        borderRadius="0 24px 24px 0"
+        loading="lazy"
       />
     </Box>
   )

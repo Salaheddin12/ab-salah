@@ -1,7 +1,8 @@
 import React from 'react'
-import { Heading, Box, Image, Button } from '@chakra-ui/react'
+import { Heading, Box, Button } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import Section from '../../section'
+import Image from 'next/image'
 
 const Paragraph = styled.p`
   color: #333;
@@ -37,6 +38,8 @@ const index = () => {
       <Image
         src="/images/me-about.png"
         ml="2.5rem"
+        width={529}
+        height={523}
         maxWidth="50%"
         alt="Profile image"
       />

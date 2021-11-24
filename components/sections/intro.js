@@ -1,13 +1,24 @@
 import React from 'react'
-import { Heading, Box, Image } from '@chakra-ui/react'
+import { Heading, Box } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import Section from '../section'
 import LinkItem from './../link'
+import Image from 'next/image'
 
+const HeroImageMobile = styled(Image)`
+  max-width: 50%;
+`
+
+const HeroImage = styled(Image)`
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  max-width: 50%;
+`
 const Paragraph = styled.p`
   color: #333;
   font-size: 0.75rem;
-  font-family: 'NUNITO';
   font-size: 1.5rem;
   line-height: 2.25rem;
   color: #828282;
@@ -40,32 +51,28 @@ const index = () => {
           Reach out
         </LinkItem>
       </Box>
-      <Image
-        src="/images/me.png"
+      <Box visibility={{ base: 'visible', lg: 'hidden' }}>
+        <HeroImageMobile
+          src="/images/me-mobile.png"
+          alt="Profile image mobile"
+          width={265}
+          height={292}
+        />
+      </Box>
+      <Box
         position="absolute"
-        visibility={{ base: 'hidden', lg: 'visible' }}
-        zIndex={-1}
         top={0}
         right={0}
         maxWidth="50%"
-        alt="Profile image"
-      />
-      <Image
-        src="/images/me-mobile.png"
-        visibility={{ base: 'visible', lg: 'hidden' }}
-        maxWidth="50%"
-        alt="Profile image"
-      />
-      <Image
-        src="/images/red-shape.png"
-        right={0}
-        visibility={{ base: 'visible', lg: 'hidden' }}
-        position="absolute"
-        zIndex={-1}
-        top="21%"
-        width={147}
-        alt="Profile image"
-      />
+        visibility={{ base: 'hidden', lg: 'visible' }}
+      >
+        <HeroImage
+          src="/images/me.png"
+          width={720}
+          height={629}
+          alt="Profile image desktop"
+        />
+      </Box>
     </Section>
   )
 }
