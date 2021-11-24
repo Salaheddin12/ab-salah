@@ -5,7 +5,17 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head></Head>
+        <Head>
+          <link
+            href="../public/fonts/Comfortaa/Comfortaa-Regular.woff"
+            rel="preload"
+          />
+          <link
+            href="../public/fonts/Nunito/Nunito-Regular.woff"
+            rel="preload"
+          />
+          <link href="../public/fonts/Nunito/Nunito-bold.woff" rel="preload" />
+        </Head>
         <body>
           <Main />
           <NextScript />
