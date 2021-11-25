@@ -7,6 +7,7 @@ import Image from 'next/image'
 
 const HeroImageMobile = styled(Image)`
   max-width: 50%;
+  margin: 0 auto;
 `
 
 const HeroImage = styled(Image)`
@@ -31,6 +32,7 @@ const index = () => {
       delay={0.1}
       flexDirection={{ base: 'column-reverse', md: 'row' }}
       alignItems="center"
+      justifyContent="space-between"
     >
       <Box flexGrow={1} mt={4} maxWidth="25rem">
         <Heading as="h4" variant="section-subtitle">
@@ -51,7 +53,11 @@ const index = () => {
           Reach out
         </LinkItem>
       </Box>
-      <Box visibility={{ base: 'visible', lg: 'hidden' }}>
+      <Box
+        visibility={{ base: 'visible', lg: 'hidden' }}
+        display="flex"
+        width="50%"
+      >
         <HeroImageMobile
           src="/images/me-mobile.png"
           alt="Profile image mobile"
