@@ -10,13 +10,6 @@ const HeroImageMobile = styled(Image)`
   margin: 0 auto;
 `
 
-const HeroImage = styled(Image)`
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  right: 0;
-  max-width: 50%;
-`
 const Paragraph = styled.p`
   color: #333;
   font-size: 0.75rem;
@@ -63,20 +56,6 @@ const index = () => {
           alt="Profile image mobile"
           width={265}
           height={292}
-        />
-      </Box>
-      <Box
-        position="absolute"
-        top={0}
-        right={0}
-        maxWidth="50%"
-        visibility={{ base: 'hidden', lg: 'visible' }}
-      >
-        <HeroImage
-          src="/images/me.png"
-          width={720}
-          height={629}
-          alt="Profile image desktop"
         />
       </Box>
     </Section>

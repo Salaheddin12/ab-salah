@@ -13,23 +13,11 @@ import {
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 
-const LinkItem = ({ href, path, _target, children, ...props }) => {
-  const active = path === href
+const LinkItem = ({ href, _target, children, ...props }) => {
+  // const active = path === href
   return (
     <NextLink href={href}>
-      <Link
-        p={2}
-        color={active ? '#E05D5D' : '#202023'}
-        _target={_target}
-        _hover={{
-          textDecoration: 'none',
-          color: '#E05D5D'
-        }}
-        _focus={{
-          boxShadow: 'none'
-        }}
-        {...props}
-      >
+      <Link variant="navLink" {...props}>
         {children}
       </Link>
     </NextLink>
