@@ -12,6 +12,7 @@ import * as emailjs from 'emailjs-com'
 import { Field, Formik, Form } from 'formik'
 import styled from '@emotion/styled'
 import * as Yup from 'yup'
+import ContactFormField from '../formField'
 
 const schema = Yup.object({
   name: Yup.string()
@@ -50,19 +51,6 @@ const sendMail = async data => {
     })
 }
 
-const FormInput = styled.input`
-  color: gray;
-  width: 100%;
-  padding: 8px 12px;
-  border: 1px solid #e8ecf4;
-  border-radius: 8px;
-  background: transparent;
-  outline: none;
-  :focus-visible {
-    border: 1px solid #00a19d;
-  }
-`
-
 const FormTextArea = styled.textarea`
   color: gray;
   width: 100%;
@@ -86,6 +74,20 @@ const FormBox = styled.div`
 `
 
 const ContactForm = () => {
+  const inputs = [
+    {
+      name: 'name',
+      label: 'Name'
+    },
+    {
+      name: 'email',
+      label: 'Email'
+    },
+    {
+      name: 'subject',
+      label: 'Subject'
+    }
+  ]
   return (
     <Section delay={0.1} display="inherit">
       <Box my={40}>
@@ -110,51 +112,18 @@ const ContactForm = () => {
           >
             {props => (
               <Form>
-                <Field name="name">
-                  {({ field, form }) => (
-                    <FormControl
-                      isInvalid={form.errors.name && form.touched.name}
-                      mb={8}
-                    >
-                      <FormLabel htmlFor="name">Name</FormLabel>
-                      <FormInput
-                        {...field}
-                        id="name"
-                        color="grey"
-                        placeholder="name"
+                {inputs.map((el, index) => (
+                  <Field key={index} name={el.name}>
+                    {({ field, form }) => (
+                      <ContactFormField
+                        form={form}
+                        field={field}
+                        name={el.name}
+                        label={el.label}
                       />
-                      <FormErrorMessage>{form.errors.name}</FormErrorMessage>
-                    </FormControl>
-                  )}
-                </Field>
-                <Field name="email">
-                  {({ field, form }) => (
-                    <FormControl
-                      isInvalid={form.errors.email && form.touched.email}
-                      mb={8}
-                    >
-                      <FormLabel htmlFor="email">Email</FormLabel>
-                      <FormInput {...field} id="email" placeholder="email" />
-                      <FormErrorMessage>{form.errors.email}</FormErrorMessage>
-                    </FormControl>
-                  )}
-                </Field>
-                <Field name="subject">
-                  {({ field, form }) => (
-                    <FormControl
-                      isInvalid={form.errors.subject && form.touched.subject}
-                      mb={8}
-                    >
-                      <FormLabel htmlFor="subject">Subject</FormLabel>
-                      <FormInput
-                        {...field}
-                        id="subject"
-                        placeholder="subject"
-                      />
-                      <FormErrorMessage>{form.errors.subject}</FormErrorMessage>
-                    </FormControl>
-                  )}
-                </Field>
+                    )}
+                  </Field>
+                ))}
                 <Field name="message">
                   {({ field, form }) => (
                     <FormControl
