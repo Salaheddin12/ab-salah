@@ -38,10 +38,10 @@ const sendMail = async data => {
   }
   await emailjs
     .send(
-      process.env.SERVICE_ID,
-      process.env.TEMPLATE_ID,
+      process.env.NEXT_PUBLIC_SERVICE_ID,
+      process.env.NEXT_PUBLIC_TEMPLATE_ID,
       templateParams,
-      process.env.USER_ID
+      process.env.NEXT_PUBLIC_USER_ID
     )
     .then(response => {
       console.log(response.status, response.text)
@@ -103,11 +103,8 @@ const ContactForm = () => {
           <Formik
             initialValues={{ name: '', email: '', subject: '', message: '' }}
             validationSchema={schema}
-            onSubmit={(values, actions) => {
-              setTimeout(() => {
-                sendMail(values)
-                actions.setSubmitting(false)
-              }, 1000)
+            onSubmit={values => {
+              sendMail(values)
             }}
           >
             {props => (
