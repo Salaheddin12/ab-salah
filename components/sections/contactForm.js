@@ -101,7 +101,7 @@ const ContactForm = () => {
         </Heading>
         <FormBox>
           <Formik
-            initialValues={{ name: '', email: '', message: '' }}
+            initialValues={{ name: '', email: '', subject: '', message: '' }}
             validationSchema={schema}
             onSubmit={(values, actions) => {
               setTimeout(() => {
