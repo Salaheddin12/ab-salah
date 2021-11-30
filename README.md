@@ -17,10 +17,10 @@ Demo: ab-salah-psi.vercel.app/
 First create a `.env` file as follows:
 
 ```
-SERVICE_ID=service_xxxxxxx
-TEMPLATE_ID=template_xxxxxxx
-USER_ID=user_xxxxxxxxxxxxxxxxxxxxx
-ANALYZE=false
+NEXT_PUBLIC_SERVICE_ID=service_xxxxxxx
+NEXT_PUBLIC_TEMPLATE_ID=template_xxxxxxx
+NEXT_PUBLIC_USER_ID=user_xxxxxxxxxxxxxxxxxxxxx
+NEXT_PUBLIC_ANALYZE=false
 ```
 
 Then
