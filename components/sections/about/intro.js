@@ -37,7 +37,7 @@ const index = () => {
         <LinkItem
           rel="noreferrer noopener"
           target="_blank"
-          href="https://drive.google.com/file/d/1uNcYjrScNNy79Gk7JWBjD2rf_e-Ky0KC/view?usp=sharing"
+          href="https://drive.google.com/file/d/1auEM9pj3K_IM9CBNBgDC789Omv9XwyCj/view?usp=sharing"
           variant="teal"
         >
           Resume
