@@ -1,8 +1,9 @@
 import React from 'react'
-import { Heading, Box, Button } from '@chakra-ui/react'
+import { Heading, Box } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import Section from '../../section'
 import Image from 'next/image'
+import LinkItem from '../../link'
 
 const Paragraph = styled.p`
   color: #333;
@@ -33,7 +34,14 @@ const index = () => {
           programming for two years then specialized in web development, I use
           React, NextJs and familiar with vuejs.
         </Paragraph>
-        <Button variant="base">Resume</Button>
+        <LinkItem
+          rel="noreferrer noopener"
+          target="_blank"
+          href="https://drive.google.com/file/d/1uNcYjrScNNy79Gk7JWBjD2rf_e-Ky0KC/view?usp=sharing"
+          variant="teal"
+        >
+          Resume
+        </LinkItem>
       </Box>
       <Image
         src="/images/me-about.png"
