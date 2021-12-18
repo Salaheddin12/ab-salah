@@ -14,7 +14,6 @@ import {
 import { HamburgerIcon } from '@chakra-ui/icons'
 
 const LinkItem = ({ href, _target, children, ...props }) => {
-  // const active = path === href
   return (
     <NextLink href={href}>
       <Link variant="navLink" {...props}>

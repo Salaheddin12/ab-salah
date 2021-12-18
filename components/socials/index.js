@@ -15,10 +15,6 @@ export const Links = styled.div`
   }
   a {
     margin: 1rem;
-    /* &:first-child,
-    &:last-child {
-      margin: 0.5rem;
-    } */
   }
   @media (max-width: 1000px) {
     position: inherit;

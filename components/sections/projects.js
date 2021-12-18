@@ -1,4 +1,3 @@
-import React from 'react'
 import { Box, Heading } from '@chakra-ui/react'
 import Project from '~components/projectCard'
 import Section from '~components/section'
