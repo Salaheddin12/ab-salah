@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Section from '../components/section'
+import Section from '~components/section'
 import { Box, Heading } from '@chakra-ui/react'
 
 export default function Custom404() {

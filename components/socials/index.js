@@ -1,6 +1,6 @@
-import Github from './Github'
-import Email from './Email'
-import { socialLinks, colors } from '../../lib/data'
+import Github from '~components/socials/Github'
+import Email from '~components/socials/Email'
+import { socialLinks, colors } from '~lib/data'
 import styled from '@emotion/styled'
 
 export const Links = styled.div`

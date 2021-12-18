@@ -1,5 +1,3 @@
-import Section from '../section'
-import Socials from '../socials'
 import {
   Box,
   FormControl,
@@ -12,7 +10,9 @@ import * as emailjs from 'emailjs-com'
 import { Field, Formik, Form } from 'formik'
 import styled from '@emotion/styled'
 import * as Yup from 'yup'
-import ContactFormField from '../formField'
+import ContactFormField from '~components/formField'
+import Section from '~components/section'
+import Socials from '~components/socials'
 
 const schema = Yup.object({
   name: Yup.string()

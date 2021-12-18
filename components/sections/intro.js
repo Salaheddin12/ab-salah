@@ -1,9 +1,9 @@
 import React from 'react'
 import { Heading, Box } from '@chakra-ui/react'
 import styled from '@emotion/styled'
-import Section from '../section'
-import LinkItem from './../link'
 import Image from 'next/image'
+import Section from '~components/section'
+import LinkItem from '~components/link'
 
 const HeroImageMobile = styled(Image)`
   max-width: 50%;

@@ -1,6 +1,6 @@
 import React from 'react'
-import ContactForm from '../components/sections/contactForm'
-import Intro from '../components/sections/about/intro'
+import ContactForm from '~components/sections/contactForm'
+import Intro from '~components/sections/about/intro'
 
 const Index = () => {
   return (

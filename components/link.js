@@ -1,5 +1,6 @@
 import { Link } from '@chakra-ui/react'
 import NextLink from 'next/link'
+
 const LinkItem = ({ href, _target, rel, children, ...props }) => {
   return (
     <NextLink href={href}>

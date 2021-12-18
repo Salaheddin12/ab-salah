@@ -1,8 +1,8 @@
 import React from 'react'
 import { Box, Heading } from '@chakra-ui/react'
-import Project from '../projectCard'
-import Section from '../section'
-import { projects } from '../../lib/projects.yaml'
+import Project from '~components/projectCard'
+import Section from '~components/section'
+import { projects } from '~lib/projects.yaml'
 
 const Index = () => {
   return (

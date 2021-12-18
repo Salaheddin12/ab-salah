@@ -1,9 +1,9 @@
 import React from 'react'
 import { Heading, Box } from '@chakra-ui/react'
 import styled from '@emotion/styled'
-import Section from '../../section'
 import Image from 'next/image'
-import LinkItem from '../../link'
+import Section from '~components/section'
+import LinkItem from '~components/link'
 
 const Paragraph = styled.p`
   color: #333;

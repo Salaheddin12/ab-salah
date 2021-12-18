@@ -1,8 +1,9 @@
 import React from 'react'
 import { Heading, Box } from '@chakra-ui/react'
 import styled from '@emotion/styled'
-import LinkItem from './link'
 import Image from 'next/image'
+import LinkItem from '~components/link'
+
 const StyledImage = styled(Image)`
   border-radius: 0 24px 24px 0;
 `
