@@ -1,13 +1,6 @@
 import { Global } from '@emotion/react'
 
 const Fonts = () => (
-  //       @font-face {
-  //   font-family: 'Roboto';
-  //   font-style: normal;
-  //   font-weight: 400;
-  //   font-display: swap;
-  //   src: local('Comfortaa'), url(/fonts/Comfortaa/Roboto-Regular.woff) format('woff');
-  // }
   <Global
     styles={`
       @font-face {

@@ -1,12 +1,12 @@
 import React from 'react'
-import ContactForm from '~components/sections/contactForm'
-import Intro from '~components/sections/about/intro'
+import Contact from '~components/sections/Contact'
+import Intro from '~components/sections/About'
 
 const Index = () => {
   return (
     <React.Fragment>
       <Intro />
-      <ContactForm />
+      <Contact />
     </React.Fragment>
   )
 }

@@ -2,9 +2,9 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Box } from '@chakra-ui/react'
 import Image from 'next/image'
-import ContactForm from '~components/sections/contactForm'
-import Intro from '~components/sections/intro'
-import Projects from '~components/sections/projects'
+import Contact from '~components/sections/Contact'
+import Intro from '~components/sections/Intro'
+import Projects from '~components/sections/Projects'
 
 const HeroImage = styled(Image)`
   position: absolute;
@@ -34,7 +34,7 @@ const Index = () => {
       </Box>
       <Intro />
       <Projects />
-      <ContactForm />
+      <Contact />
     </React.Fragment>
   )
 }
