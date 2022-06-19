@@ -6,10 +6,14 @@ import styled from '@emotion/styled'
 export const Links = styled.div`
   display: flex;
   padding-top: 1rem;
+  margin-top: 3.5rem;
   justify-content: space-between;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  @media (max-width: 768px) {
+    margin-top: 1rem;
+  }
   svg {
     width: 24px;
   }

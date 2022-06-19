@@ -69,10 +69,17 @@ const FormBox = styled.div`
   margin-top: 4rem;
   padding: 2rem 3rem;
   box-shadow: 0px 0px 20px 5px rgba(91, 91, 91, 0.17);
-  max-width: 24rem;
+  max-width: 40rem;
   background-color: #f9faff;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
+// {}
 const ContactForm = () => {
   const inputs = [
     {
@@ -99,61 +106,64 @@ const ContactForm = () => {
         >
           Contact
         </Heading>
-        <FormBox>
-          <Formik
-            initialValues={{ name: '', email: '', subject: '', message: '' }}
-            validationSchema={schema}
-            onSubmit={values => {
-              sendMail(values)
-            }}
-          >
-            {props => (
-              <Form>
-                {inputs.map((el, index) => (
-                  <Field key={index} name={el.name}>
+        <Formik
+          initialValues={{ name: '', email: '', subject: '', message: '' }}
+          validationSchema={schema}
+          onSubmit={values => {
+            sendMail(values)
+          }}
+        >
+          {props => (
+            <Form>
+              <FormBox>
+                <div>
+                  {inputs.map((el, index) => (
+                    <Field key={index} name={el.name}>
+                      {({ field, form }) => (
+                        <ContactFormField
+                          form={form}
+                          field={field}
+                          name={el.name}
+                          label={el.label}
+                        />
+                      )}
+                    </Field>
+                  ))}
+                </div>
+                <div>
+                  <Field name="message">
                     {({ field, form }) => (
-                      <ContactFormField
-                        form={form}
-                        field={field}
-                        name={el.name}
-                        label={el.label}
-                      />
+                      <FormControl
+                        isInvalid={form.errors.message && form.touched.message}
+                        mb={8}
+                      >
+                        <FormLabel htmlFor="message" color="#333">
+                          Message
+                        </FormLabel>
+                        <FormTextArea
+                          {...field}
+                          id="message"
+                          placeholder="message"
+                        />
+                        <FormErrorMessage>{form.errors.message}</FormErrorMessage>
+                      </FormControl>
                     )}
                   </Field>
-                ))}
-                <Field name="message">
-                  {({ field, form }) => (
-                    <FormControl
-                      isInvalid={form.errors.message && form.touched.message}
-                      mb={8}
-                    >
-                      <FormLabel htmlFor="message" color="#333">
-                        Message
-                      </FormLabel>
-                      <FormTextArea
-                        {...field}
-                        id="message"
-                        placeholder="message"
-                      />
-                      <FormErrorMessage>{form.errors.message}</FormErrorMessage>
-                    </FormControl>
-                  )}
-                </Field>
-                <Button
-                  mt={4}
-                  isLoading={props.isSubmitting}
-                  type="submit"
-                  variant="base"
-                  m="0 auto"
-                  display="block"
-                >
-                  Submit
-                </Button>
-                <Socials />
-              </Form>
-            )}
-          </Formik>
-        </FormBox>
+                  <Button
+                    mt={4}
+                    isLoading={props.isSubmitting}
+                    type="submit"
+                    variant="base"
+                    display="block"
+                  >
+                    Submit
+                  </Button>
+                  <Socials />
+                </div>
+              </FormBox>
+            </Form>
+          )}
+        </Formik>
       </Box>
     </Section>
   )
