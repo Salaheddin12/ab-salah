@@ -4,15 +4,17 @@ import {
   FormErrorMessage,
   FormLabel,
   Button,
-  Heading
+  Heading,
+  useToast
 } from '@chakra-ui/react'
-import * as emailjs from 'emailjs-com'
 import { Field, Formik, Form } from 'formik'
 import styled from '@emotion/styled'
 import * as Yup from 'yup'
 import ContactFormField from '~components/formField'
 import Section from '~components/section'
 import Socials from '~components/socials'
+import { sendMail } from '../../../api'
+import { useEffect, useState } from 'react'
 
 const schema = Yup.object({
   name: Yup.string()
@@ -27,29 +29,6 @@ const schema = Yup.object({
     .max(40, 'Must be 40 characters or less'),
   email: Yup.string().email('Invalid email address').required('Required')
 })
-
-const sendMail = async data => {
-  const { name, message, email, subject } = data
-  const templateParams = {
-    name,
-    message,
-    email,
-    subject
-  }
-  await emailjs
-    .send(
-      process.env.NEXT_PUBLIC_SERVICE_ID,
-      process.env.NEXT_PUBLIC_TEMPLATE_ID,
-      templateParams,
-      process.env.NEXT_PUBLIC_USER_ID
-    )
-    .then(response => {
-      console.log(response.status, response.text)
-    })
-    .catch(err => {
-      console.log(err)
-    })
-}
 
 const FormTextArea = styled.textarea`
   color: gray;
@@ -79,8 +58,21 @@ const FormBox = styled.div`
   }
 `
 
-// {}
 const ContactForm = () => {
+  const toast = useToast()
+  const [status, setStatus] = useState('initial');
+
+  const handleSubmit = async data => {
+
+  await sendMail(data)
+    .then(() => {
+      setStatus('success');
+    })
+    .catch(() => {
+      setStatus('error');
+    })
+  }
+
   const inputs = [
     {
       name: 'name',
@@ -95,6 +87,15 @@ const ContactForm = () => {
       label: 'Subject'
     }
   ]
+  useEffect(() => {
+    if(status !== 'initial')
+    toast({
+      title: `${status} toast`,
+      status: status,
+      position: 'top',
+      isClosable: true,
+    })
+  });
   return (
     <Section delay={0.1} display="inherit">
       <Box my={40}>
@@ -110,11 +111,11 @@ const ContactForm = () => {
           initialValues={{ name: '', email: '', subject: '', message: '' }}
           validationSchema={schema}
           onSubmit={values => {
-            sendMail(values)
+            handleSubmit(values)
           }}
         >
           {props => (
-            <Form>
+            <Form onSubmit={props.handleSubmit}>
               <FormBox>
                 <div>
                   {inputs.map((el, index) => (
@@ -151,7 +152,6 @@ const ContactForm = () => {
                   </Field>
                   <Button
                     mt={4}
-                    isLoading={props.isSubmitting}
                     type="submit"
                     variant="base"
                     display="block"
