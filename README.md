@@ -10,7 +10,7 @@ Demo: ab-salah-psi.vercel.app/
 2. Grab your api key:
    SERVICE_ID
    TEMPLATE_ID
-   USER_ID
+   PRIVATE_KEY
 
 ### Build Setup
 
@@ -19,7 +19,7 @@ First create a `.env` file as follows:
 ```
 NEXT_PUBLIC_SERVICE_ID=service_xxxxxxx
 NEXT_PUBLIC_TEMPLATE_ID=template_xxxxxxx
-NEXT_PUBLIC_USER_ID=user_xxxxxxxxxxxxxxxxxxxxx
+NEXT_PUBLIC_USER_ID=xxxxxxxxxxxxxxxxxxxxx
 NEXT_PUBLIC_ANALYZE=false
 ```
 
