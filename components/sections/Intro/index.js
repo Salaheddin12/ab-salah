@@ -34,9 +34,7 @@ const index = () => {
           Hello, my name is Salah Eddine
         </Heading>
         <Paragraph variant="section-p">
-          I am a front end developer based in Rabat, Morocco. I studied
-          programming for two years then specialized in web development, I use
-          React, NextJs and familiar with vuejs.
+          I am a front end developer based in Rabat, Morocco.
         </Paragraph>
         <LinkItem href="#projects" variant="teal">
           Projects
