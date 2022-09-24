@@ -1,6 +1,6 @@
 import React from 'react'
-import Contact from '~components/sections/Contact'
-import Intro from '~components/sections/About'
+import Contact from '~components/Sections/Contact'
+import Intro from '~components/Sections/About'
 
 const Index = () => {
   return (
