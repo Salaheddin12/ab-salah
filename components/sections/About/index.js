@@ -30,9 +30,7 @@ const index = () => {
           About me
         </Heading>
         <Paragraph variant="section-p">
-          I am a front end developer based in Rabat, Morocco. I studied
-          programming for two years then specialized in web development, I use
-          React, NextJs and familiar with vuejs.
+          Front end developer based in Rabat, Morocco.
         </Paragraph>
         <LinkItem
           rel="noreferrer noopener"
