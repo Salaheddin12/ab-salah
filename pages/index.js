@@ -3,8 +3,8 @@ import styled from '@emotion/styled'
 import { Box } from '@chakra-ui/react'
 import Image from 'next/image'
 import ContactForm from '~components/sections/Contact'
-import Intro from '~components/Sections/Intro'
-import Projects from '~components/Sections/Projects'
+import Intro from '~/Intro'
+import Projects from '~components/sections/Projects'
 
 const HeroImage = styled(Image)`
   position: absolute;
