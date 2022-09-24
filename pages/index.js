@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Box } from '@chakra-ui/react'
 import Image from 'next/image'
-import ContactForm from '~components/Sections/Contact'
+import ContactForm from '~components/sections/Contact'
 import Intro from '~components/Sections/Intro'
 import Projects from '~components/Sections/Projects'
 
