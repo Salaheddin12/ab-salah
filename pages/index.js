@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Box } from '@chakra-ui/react'
 import Image from 'next/image'
-import Contact from '~components/Sections/Contact'
+import ContactForm from '~components/Sections/Contact'
 import Intro from '~components/Sections/Intro'
 import Projects from '~components/Sections/Projects'
 
@@ -34,7 +34,7 @@ const Index = () => {
       </Box>
       <Intro />
       <Projects />
-      <Contact />
+      <ContactForm />
     </React.Fragment>
   )
 }
