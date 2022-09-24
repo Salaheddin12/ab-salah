@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { Box } from '@chakra-ui/react'
 import Image from 'next/image'
 import ContactForm from '~components/sections/Contact'
-import Intro from '~/Intro'
+import Intro from '~components/sections/About'
 import Projects from '~components/sections/Projects'
 
 const HeroImage = styled(Image)`
