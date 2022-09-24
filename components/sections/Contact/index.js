@@ -10,7 +10,7 @@ import {
 import { Field, Formik, Form } from 'formik'
 import styled from '@emotion/styled'
 import * as Yup from 'yup'
-import ContactFormField from '~components/formField'
+import ContactFormField from '~components/FormField'
 import Section from '~components/Section'
 import Socials from '~components/socials'
 import { sendMail } from '../../../api'

@@ -2,7 +2,7 @@ import React from 'react'
 import { Heading, Box } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import Image from 'next/image'
-import LinkItem from '~components/link'
+import LinkItem from '~components/Link'
 
 const StyledImage = styled(Image)`
   border-radius: 0 24px 24px 0;

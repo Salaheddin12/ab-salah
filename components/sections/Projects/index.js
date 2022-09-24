@@ -1,5 +1,5 @@
 import { Box, Heading } from '@chakra-ui/react'
-import Project from '~components/projectCard'
+import Project from '~components/ProjectCard'
 import Section from '~components/Section'
 import { projects } from '~lib/projects.yaml'
 
