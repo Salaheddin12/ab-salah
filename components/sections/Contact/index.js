@@ -58,20 +58,28 @@ const FormBox = styled.div`
   }
 `
 
+export const Actions = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 0.75rem;
+`
+
 const ContactForm = () => {
   const toast = useToast()
   const [status, setStatus] = useState('initial');
+  const initialFormValues = { name: '', email: '', subject: '', message: '' };
 
   const handleSubmit = async data => {
-
-  await sendMail(data)
-    .then(() => {
-      setStatus('success');
-    })
-    .catch(() => {
-      setStatus('error');
-    })
-  }
+    await sendMail(data)
+      .then(() => {
+        setStatus('success');
+      })
+      .catch(() => {
+        setStatus('error');
+      })
+    }
 
   const inputs = [
     {
@@ -88,13 +96,22 @@ const ContactForm = () => {
     }
   ]
   useEffect(() => {
-    if(status !== 'initial')
-    toast({
-      title: `${status} toast`,
-      status: status,
-      position: 'top',
-      isClosable: true,
-    })
+    if (status === 'success')
+      toast({
+        title: "Email sent successfully",
+        description: "We'll get back to you soon.",
+        status: status,
+        position: 'top-right',
+        isClosable: true,
+      })
+    if (status === 'error')
+      toast({
+        title: "There was a probem sending your message",
+        description: "Please try again",
+        status: status,
+        position: 'top-right',
+        isClosable: true,
+      })
   });
   return (
     <Section delay={0.1} display="inherit">
@@ -108,10 +125,14 @@ const ContactForm = () => {
           Contact
         </Heading>
         <Formik
-          initialValues={{ name: '', email: '', subject: '', message: '' }}
+          initialValues={initialFormValues}
           validationSchema={schema}
-          onSubmit={values => {
-            handleSubmit(values)
+          onSubmit={(values, actions) => {
+            handleSubmit(values).then(() => {
+            actions.resetForm({
+             values: initialFormValues,
+           })
+          });
           }}
         >
           {props => (
@@ -144,21 +165,23 @@ const ContactForm = () => {
                         <FormTextArea
                           {...field}
                           id="message"
+                          rows={5}
                           placeholder="message"
                         />
                         <FormErrorMessage>{form.errors.message}</FormErrorMessage>
                       </FormControl>
                     )}
                   </Field>
-                  <Button
-                    mt={4}
-                    type="submit"
-                    variant="base"
-                    display="block"
-                  >
-                    Submit
-                  </Button>
-                  <Socials />
+                  <Actions>
+                    <Button
+                      mt={4}
+                      type="submit"
+                      variant="base"
+                    >
+                      Submit
+                    </Button>
+                    <Socials />
+                  </Actions>
                 </div>
               </FormBox>
             </Form>

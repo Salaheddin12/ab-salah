@@ -31,10 +31,10 @@ const index = () => {
           frontend web developer
         </Heading>
         <Heading as="h2" variant="section-title" pb="2rem" margin={0}>
-          Hello, my name is Salah Eddine
+          {"Hello, I'm Salah Eddine"}
         </Heading>
         <Paragraph variant="section-p">
-          I am a front end developer based in Rabat, Morocco.
+          A front end developer based in Rabat, Morocco.
         </Paragraph>
         <LinkItem href="#projects" variant="teal">
           Projects
